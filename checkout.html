@@ -1,0 +1,2273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="إتمام الطلب | متجر الأمير"
+    >
+
+    <meta
+        name="theme-color"
+        content="#000000"
+    >
+
+    <title>إتمام الطلب | الأمير</title>
+
+
+    <!-- ================= GOOGLE FONT ================= -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+
+            font-family: "Aref Ruqaa", serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #a09f9f 0%,
+                    #000000 45%,
+                    #000000 100%
+                );
+
+            color: #ffffff;
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+
+            width: 92%;
+
+            max-width: 700px;
+
+            margin: 40px auto;
+
+        }
+
+
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo {
+
+            text-align: center;
+
+            color: #fffefe;
+
+            font-size: 45px;
+
+            font-weight: 700;
+
+            margin-bottom: 25px;
+
+            text-shadow:
+                0 5px 20px rgba(255, 255, 255, 0.08);
+
+        }
+
+
+        /* =========================
+           CHECKOUT BOX
+        ========================= */
+
+        .checkout-box {
+
+            background: #3838385b;
+
+            color: #fdfdfd;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.65);
+
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .title {
+
+            text-align: center;
+
+            color: #fdfdfd;
+
+            font-size: 30px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .subtitle {
+
+            text-align: center;
+
+            color: #a5a5a5;
+
+            margin-bottom: 30px;
+
+            font-size: 17px;
+
+        }
+
+
+        /* =========================
+           PRODUCT SUMMARY
+        ========================= */
+
+        .product-summary {
+
+            background: #436d4a;
+
+            border: 1px solid #2b2b2b;
+
+            border-radius: 15px;
+
+            padding: 18px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                inset 0 0 20px rgba(255, 255, 255, 0.015);
+
+        }
+
+
+        .product-summary-title {
+
+            color: #ffffff;
+
+            font-size: 21px;
+
+            font-weight: 700;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .product-summary p {
+
+            font-size: 17px;
+
+            margin: 6px 0;
+
+            color: #dddddd;
+
+        }
+
+
+        .product-summary strong {
+
+            color: #ffffff;
+
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .form-group {
+
+            margin-bottom: 18px;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #ffffff;
+
+            font-size: 18px;
+
+            font-weight: 700;
+
+        }
+
+
+        input,
+        select {
+
+            width: 100%;
+
+            height: 52px;
+
+            padding: 0 15px;
+
+            border: 1px solid #333333;
+
+            border-radius: 12px;
+
+            outline: none;
+
+            font-family: inherit;
+
+            font-size: 16px;
+
+            background: #a8a8a8;
+
+            color: #111111;
+
+            transition: 0.3s;
+
+        }
+
+
+        input::placeholder {
+
+            color: #777777;
+
+        }
+
+
+        input:focus,
+        select:focus {
+
+            border-color: #fffdfd;
+
+            background: #ffffff;
+
+            color: #111111;
+
+            box-shadow:
+                0 0 0 3px rgba(255, 255, 255, 0.12);
+
+        }
+
+
+        select:disabled {
+
+            opacity: 0.65;
+
+            cursor: not-allowed;
+
+        }
+
+
+        /* =========================
+           ROW
+        ========================= */
+
+        .row {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+
+        }
+
+
+        /* =========================
+           SUBMIT BUTTON
+        ========================= */
+
+        .submit-btn {
+
+            width: 100%;
+
+            height: 55px;
+
+            border: 1px solid #ffffff;
+
+            border-radius: 13px;
+
+            background: #f5f5f5;
+
+            color: #000000;
+
+            font-family: inherit;
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            margin-top: 10px;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.35);
+
+        }
+
+
+        .submit-btn:hover {
+
+            background: #000000;
+
+            color: #ffffff;
+
+            border-color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 30px rgba(255, 255, 255, 0.08);
+
+        }
+
+
+        .submit-btn:disabled {
+
+            opacity: 0.65;
+
+            cursor: not-allowed;
+
+            transform: none;
+
+        }
+
+
+        /* =========================
+           LOADING
+        ========================= */
+
+        .loading {
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+        }
+
+
+        .spinner {
+
+            width: 20px;
+
+            height: 20px;
+
+            border: 3px solid rgba(0, 0, 0, 0.25);
+
+            border-top-color: #000000;
+
+            border-radius: 50%;
+
+            animation: spin 0.7s linear infinite;
+
+        }
+
+
+        @keyframes spin {
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        /* =========================
+           BACK LINK
+        ========================= */
+
+        .back {
+
+            display: block;
+
+            text-align: center;
+
+            color: #999999;
+
+            text-decoration: none;
+
+            margin-top: 20px;
+
+            font-size: 17px;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
+
+        }
+
+
+        .back:hover {
+
+            color: #ffffff;
+
+            transform: translateX(-3px);
+
+        }
+
+
+        /* =========================
+           SUCCESS MESSAGE
+        ========================= */
+
+        .success-message {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 25px 10px 15px;
+
+            animation: successAppear 0.5s ease;
+
+        }
+
+
+        .success-icon {
+
+            width: 100px;
+
+            height: 100px;
+
+            margin: 0 auto 20px;
+
+            border-radius: 50%;
+
+            background: #007c11;
+
+            color: #f5f4f4;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 55px;
+
+            font-weight: bold;
+
+            border: 3px solid #ffffff;
+
+            box-shadow:
+                0 10px 35px rgba(255, 255, 255, 0.08);
+
+            animation: iconPop 0.6s ease;
+
+        }
+
+
+        .success-message h2 {
+
+            color: #f7f7f7;
+
+            font-size: 32px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .success-message p {
+
+            color: #999999;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .success-home {
+
+            display: inline-block;
+
+            background: #ffffff;
+
+            color: #000000;
+
+            text-decoration: none;
+
+            padding: 13px 30px;
+
+            border-radius: 12px;
+
+            border: 1px solid #ffffff;
+
+            font-size: 18px;
+
+            font-weight: 700;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+
+        }
+
+
+        .success-home:hover {
+
+            background: #000000;
+
+            color: #ffffff;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* =========================
+           ERROR MESSAGE
+        ========================= */
+
+        .error-message {
+
+            display: none;
+
+            background: #160707;
+
+            color: #ffb4b4;
+
+            border: 1px solid #4a1818;
+
+            border-radius: 12px;
+
+            padding: 12px 15px;
+
+            margin-top: 15px;
+
+            text-align: center;
+
+            font-size: 16px;
+
+        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes successAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(20px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+        @keyframes iconPop {
+
+            0% {
+
+                opacity: 0;
+
+                transform: scale(0.4);
+
+            }
+
+            70% {
+
+                transform: scale(1.1);
+
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform: scale(1);
+
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                width: 94%;
+
+                margin: 20px auto;
+
+            }
+
+
+            .checkout-box {
+
+                padding: 20px;
+
+            }
+
+
+            .logo {
+
+                font-size: 36px;
+
+            }
+
+
+            .title {
+
+                font-size: 26px;
+
+            }
+
+
+            .row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+
+            }
+
+
+            .success-message h2 {
+
+                font-size: 27px;
+
+            }
+
+
+            .success-icon {
+
+                width: 85px;
+
+                height: 85px;
+
+                font-size: 45px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <!-- =========================
+             LOGO
+        ========================= -->
+
+        <div class="logo">
+            الأمير
+        </div>
+
+
+        <div class="checkout-box">
+
+
+            <!-- =========================
+                 CHECKOUT CONTENT
+            ========================= -->
+
+            <div id="checkoutContent">
+
+
+                <h1 class="title">
+                    إتمام الطلب
+                </h1>
+
+
+                <p class="subtitle">
+                    من فضلك أدخل بيانات التوصيل الخاصة بك
+                </p>
+
+
+                <!-- =========================
+                     PRODUCT SUMMARY
+                ========================= -->
+
+                <div
+                    class="product-summary"
+                    id="productSummary"
+                >
+
+                    <div class="product-summary-title">
+                        🛍️ تفاصيل المنتج
+                    </div>
+
+
+                    <p>
+                        <strong>المنتج:</strong>
+                        <span id="showProductName">
+                            جاري التحميل...
+                        </span>
+                    </p>
+
+
+                    <p>
+                        <strong>السعر:</strong>
+                        <span id="showProductPrice">
+                            -
+                        </span>
+                    </p>
+
+
+                    <p>
+                        <strong>اللون:</strong>
+                        <span id="showProductColor">
+                            -
+                        </span>
+                    </p>
+
+
+                    <p>
+                        <strong>المقاس:</strong>
+                        <span id="showProductSize">
+                            -
+                        </span>
+                    </p>
+
+
+                    <p>
+                        <strong>الكمية:</strong>
+                        <span id="showProductQuantity">
+                            -
+                        </span>
+                    </p>
+
+                </div>
+
+
+                <!-- =========================
+                     FORM
+                ========================= -->
+
+                <form
+                    id="orderForm"
+                    action="https://formspree.io/f/mdendlvg"
+                    method="POST"
+                >
+
+
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="🔔 طلب جديد من متجر الأمير"
+                    >
+
+
+                    <!-- =========================
+                         بيانات المنتج
+                    ========================= -->
+
+                    <input
+                        type="hidden"
+                        name="اسم المنتج"
+                        id="emailProductName"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="سعر المنتج"
+                        id="emailProductPrice"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="اللون"
+                        id="emailProductColor"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="المقاس"
+                        id="emailProductSize"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="الكمية"
+                        id="emailProductQuantity"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="صورة المنتج"
+                        id="emailProductImage"
+                    >
+
+
+                    <input
+                        type="hidden"
+                        name="تفاصيل الطلب"
+                        id="emailOrderDetails"
+                    >
+
+
+                    <!-- =========================
+                         الاسم
+                    ========================= -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            الاسم بالكامل
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="اسم العميل"
+                            placeholder="اكتب اسمك الثلاثي على الأقل"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- =========================
+                         المحافظة والمدينة
+                    ========================= -->
+
+                    <div class="row">
+
+
+                        <div class="form-group">
+
+                            <label for="governorate">
+                                المحافظة
+                            </label>
+
+
+                            <select
+                                id="governorate"
+                                name="المحافظة"
+                                required
+                            >
+
+                                <option value="">
+                                    اختر المحافظة
+                                </option>
+
+                                <option>القاهرة</option>
+                                <option>الجيزة</option>
+                                <option>الإسكندرية</option>
+                                <option>الدقهلية</option>
+                                <option>البحر الأحمر</option>
+                                <option>البحيرة</option>
+                                <option>الفيوم</option>
+                                <option>الغربية</option>
+                                <option>الإسماعيلية</option>
+                                <option>المنوفية</option>
+                                <option>المنيا</option>
+                                <option>القليوبية</option>
+                                <option>الوادي الجديد</option>
+                                <option>السويس</option>
+                                <option>أسوان</option>
+                                <option>أسيوط</option>
+                                <option>بني سويف</option>
+                                <option>بورسعيد</option>
+                                <option>دمياط</option>
+                                <option>الشرقية</option>
+                                <option>جنوب سيناء</option>
+                                <option>كفر الشيخ</option>
+                                <option>مطروح</option>
+                                <option>الأقصر</option>
+                                <option>قنا</option>
+                                <option>شمال سيناء</option>
+                                <option>سوهاج</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="city">
+                                المدينة / المركز
+                            </label>
+
+
+                            <select
+                                id="city"
+                                name="المدينة"
+                                required
+                                disabled
+                            >
+
+                                <option value="">
+                                    اختر المحافظة أولًا
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         العنوان
+                    ========================= -->
+
+                    <div class="form-group">
+
+                        <label for="street">
+                            العنوان بالتفصيل
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="street"
+                            name="العنوان بالتفصيل"
+                            placeholder="اسم الشارع، رقم العمارة، الدور، الشقة"
+                            autocomplete="street-address"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- =========================
+                         واتساب
+                    ========================= -->
+
+                    <div class="form-group">
+
+                        <label for="whatsapp">
+                            رقم واتساب
+                        </label>
+
+
+                        <input
+                            type="tel"
+                            id="whatsapp"
+                            name="رقم الواتساب"
+                            placeholder="01012345678"
+                            inputmode="numeric"
+                            autocomplete="tel"
+                            maxlength="11"
+                            minlength="11"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- =========================
+                         الهاتف
+                    ========================= -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            رقم الهاتف
+                        </label>
+
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="رقم الهاتف"
+                            placeholder="01012345678"
+                            inputmode="numeric"
+                            autocomplete="tel"
+                            maxlength="11"
+                            minlength="11"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- =========================
+                         BUTTON
+                    ========================= -->
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                        id="submitBtn"
+                    >
+
+                        <span id="buttonText">
+                            تأكيد الطلب
+                        </span>
+
+
+                        <span
+                            class="loading"
+                            id="loading"
+                        >
+
+                            <span class="spinner"></span>
+
+                            جاري إرسال الطلب...
+
+                        </span>
+
+                    </button>
+
+
+                    <!-- =========================
+                         ERROR
+                    ========================= -->
+
+                    <div
+                        class="error-message"
+                        id="errorMessage"
+                    >
+                        حدث خطأ أثناء إرسال الطلب.
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+            <!-- =========================
+                 SUCCESS
+            ========================= -->
+
+            <div
+                id="successMessage"
+                class="success-message"
+            >
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+
+                <h2>
+                    تم تأكيد طلبك!
+                </h2>
+
+
+                <p>
+
+                    تم استلام طلبك بنجاح ❤️
+
+                    <br>
+
+                    شكرًا لطلبك من متجر الأمير
+
+                </p>
+
+
+                <a
+                    href="index.html"
+                    class="success-home"
+                >
+                    العودة إلى المتجر
+                </a>
+
+            </div>
+
+
+            <!-- =========================
+                 BACK
+            ========================= -->
+
+            <a
+                href="index.html"
+                class="back"
+                id="backLink"
+            >
+                ← العودة إلى المتجر
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================================
+           عناصر الصفحة
+        ========================================= */
+
+        const orderForm =
+            document.getElementById("orderForm");
+
+        const checkoutContent =
+            document.getElementById("checkoutContent");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+        const backLink =
+            document.getElementById("backLink");
+
+        const submitBtn =
+            document.getElementById("submitBtn");
+
+        const buttonText =
+            document.getElementById("buttonText");
+
+        const loading =
+            document.getElementById("loading");
+
+        const errorMessage =
+            document.getElementById("errorMessage");
+
+        const governorateSelect =
+            document.getElementById("governorate");
+
+        const citySelect =
+            document.getElementById("city");
+
+        const nameInput =
+            document.getElementById("name");
+
+        const whatsappInput =
+            document.getElementById("whatsapp");
+
+        const phoneInput =
+            document.getElementById("phone");
+
+
+        /* =========================================
+           المدن والمراكز حسب المحافظة
+        ========================================= */
+
+        const citiesByGovernorate = {
+
+            "القاهرة": [
+                "القاهرة",
+                "مصر الجديدة",
+                "النزهة",
+                "شرق مدينة نصر",
+                "غرب مدينه نصر",
+                "عين شمس",
+                "المطرية",
+                "المرج",
+                "السلام أول",
+                "السلام ثان",
+                "الزمالك",
+                "جاردن سيتي",
+                "الجمالية ",
+            "عابدين",
+                "الدرب الأحمر",
+                "الأزبكية",
+                "الموسكي",
+                "بولاق",
+                "باب الشعرية",
+                "الوايلي",
+                "منشأة ناصر",
+                "شبرا",
+                "روض الفرج",
+                "الساحل",
+                "الشرابية",
+                "الزاوية الحمراء",
+                "حدائق القبة",
+                "الزيتون",
+                "الأميرية",
+                "مصر القديمة",
+                "السيدة زينب",
+                "الخليفة",
+                "المقطم",
+                "البساتين",
+                "دار السلام",
+                "المعادي",
+                "طره",
+                "المعصرة",
+                "حلوان",
+                "التبين",
+                "15 مايو",
+            ],
+
+            "الجيزة": [
+                "الجيزة",
+                "6 أكتوبر",
+                "الشيخ زايد",
+                "الحوامدية",
+                "البدرشين",
+                "الصف",
+                "أطفيح",
+                "العياط",
+                "أوسيم",
+                "كرداسة",
+                "أبو النمرس",
+                "الهرم"
+
+            ],
+
+            "الإسكندرية": [
+                "الإسكندرية",
+                "أبو قير",
+                "المعمورة",
+                "المنتزه",
+                "المندرة",
+                "العصافره بحري",
+                "العصافره قبلي",
+                "الساعة",
+                "جليم",
+                "ستانلي",
+                "سابا باشا",
+                "بولكلي",
+                "مصطفى كامل",
+                "رشدي",
+                "كفر عبده",
+                "سيدي جابر",
+                "سموحة",
+                "الإبراهيمية",
+                "كليوباترا (حمامات والمسلة)",
+                "سبورتنج",
+                "عزبة سعد",
+                "السيوف",
+                "جناكليس",
+                "ثروت",
+                "السرايا",
+                "لوران",
+                "زيزينيا",
+                "سان ستيفانو",
+                
+           ],
+
+            "الدقهلية": [
+                "المنصورة",
+                "طلخا",
+                "ميت غمر",
+                "دكرنس",
+                "السنبلاوين",
+                "أجا",
+                "شربين",
+                "بلقاس",
+                "منية النصر",
+                "المطرية",
+                "الجمالية",
+                "نبروه",
+                "بني عبيد",
+                "تمي الأمديد",
+                "ميت سلسيل",
+                "الكردي"
+            ],
+
+            "البحر الأحمر": [
+                "الغردقة",
+                "رأس غارب",
+                "سفاجا",
+                "القصير",
+                "مرسى علم",
+                "الشلاتين",
+                "حلايب"
+            ],
+
+            "البحيرة": [
+                "دمنهور",
+                "كفر الدوار",
+                "رشيد",
+                "إدكو",
+                "أبو المطامير",
+                "أبو حمص",
+                "الدلنجات",
+                "حوش عيسى",
+                "شبراخيت",
+                "المحمودية",
+                "إيتاي البارود",
+                "وادي النطرون",
+                "الرحمانية",
+                "بدر",
+                "كوم حمادة"
+            ],
+
+            "الفيوم": [
+                "الفيوم",
+                "سنورس",
+                "إطسا",
+                "طامية",
+                "يوسف الصديق",
+                "أبشواي"
+            ],
+
+            "الغربية": [
+                "طنطا",
+                "المحلة الكبرى",
+                "كفر الزيات",
+                "زفتى",
+                "السنطة",
+                "سمنود",
+                "قطور",
+                "بسيون"
+            ],
+
+            "الإسماعيلية": [
+                "الإسماعيلية",
+                "فايد",
+                "القنطرة شرق",
+                "القنطرة غرب",
+                "التل الكبير",
+                "أبو صوير",
+                "القصاصين"
+            ],
+
+            "المنوفية": [
+                "شبين الكوم",
+                "منوف",
+                "السادات",
+                "أشمون",
+                "الباجور",
+                "تلا",
+                "الشهداء",
+                "قويسنا",
+                "بركة السبع",
+                "سرس الليان"
+            ],
+
+            "المنيا": [
+                "المنيا",
+                "ملوي",
+                "سمالوط",
+                "مغاغة",
+                "بني مزار",
+                "أبو قرقاص",
+                "مطاي",
+                "العدوة",
+                "دير مواس"
+            ],
+
+            "القليوبية": [
+                "بنها",
+                "شبرا الخيمة",
+                "القناطر الخيرية",
+                "الخانكة",
+                "كفر شكر",
+                "طوخ",
+                "قليوب",
+                "شبين القناطر",
+                "العبور",
+                "الخصوص"
+            ],
+
+            "الوادي الجديد": [
+                "الخارجة",
+                "الداخلة",
+                "الفرافرة",
+                "باريس",
+                "بلاط"
+            ],
+
+            "السويس": [
+                "السويس"
+            ],
+
+            "أسوان": [
+                "أسوان",
+                "دراو",
+                "كوم أمبو",
+                "نصر النوبة",
+                "إدفو",
+                "أبو سمبل"
+            ],
+
+            "أسيوط": [
+                "أسيوط",
+                "ديروط",
+                "القوصية",
+                "منفلوط",
+                "أبنوب",
+                "الفتح",
+                "ساحل سليم",
+                "البداري",
+                "الغنايم",
+                "صدفا",
+                "أبو تيج"
+            ],
+
+            "بني سويف": [
+                "بني سويف",
+                "الواسطي",
+                "ناصر",
+                "إهناسيا",
+                "ببا",
+                "الفشن",
+                "سمسطا"
+            ],
+
+            "بورسعيد": [
+                "بورسعيد"
+            ],
+
+            "دمياط": [
+                "دمياط",
+                "دمياط الجديدة",
+                "رأس البر",
+                "فارسكور",
+                "الزرقا",
+                "كفر سعد",
+                "كفر البطيخ",
+                "السرو",
+                "الروضة"
+            ],
+
+            "الشرقية": [
+                "الزقازيق",
+                "العاشر من رمضان",
+                "بلبيس",
+                "منيا القمح",
+                "فاقوس",
+                "أبو حماد",
+                "أبو كبير",
+                "ههيا",
+                "ديرب نجم",
+                "مشتول السوق",
+                "الإبراهيمية",
+                "كفر صقر",
+                "أولاد صقر",
+                "الحسينية"
+            ],
+
+            "جنوب سيناء": [
+                "الطور",
+                "شرم الشيخ",
+                "دهب",
+                "نويبع",
+                "طابا",
+                "رأس سدر",
+                "أبو زنيمة",
+                "أبو رديس",
+                "سانت كاترين"
+            ],
+
+            "كفر الشيخ": [
+                "كفر الشيخ",
+                "دسوق",
+                "فوه",
+                "مطوبس",
+                "بيلا",
+                "الحامول",
+                "سيدي سالم",
+                "بلطيم",
+                "قلين",
+                "الرياض",
+                "سيدي غازي",
+                "برج البرلس"
+            ],
+
+            "مطروح": [
+                "مرسى مطروح",
+                "الحمام",
+                "العلمين",
+                "الضبعة",
+                "سيدي براني",
+                "النجيلة",
+                "السلوم",
+                "سيوة"
+            ],
+
+            "الأقصر": [
+                "الأقصر",
+                "إسنا",
+                "أرمنت",
+                "القرنة",
+                "الطود",
+                "البياضية"
+            ],
+
+            "قنا": [
+                "قنا",
+                "نجع حمادي",
+                "دشنا",
+                "قفط",
+                "قوص",
+                "نقادة",
+                "أبو تشت",
+                "فرشوط",
+                "الوقف"
+            ],
+
+            "شمال سيناء": [
+                "العريش",
+                "رفح",
+                "الشيخ زويد",
+                "بئر العبد",
+                "الحسنة",
+                "نخل"
+            ],
+
+            "سوهاج": [
+                "سوهاج",
+                "أخميم",
+                "جرجا",
+                "طهطا",
+                "البلينا",
+                "المراغة",
+                "المنشأة",
+                "جهينة",
+                "دار السلام",
+                "ساقلتة",
+                "طما"
+            ]
+
+        };
+
+
+        /* =========================================
+           تغيير المحافظة
+        ========================================= */
+
+        governorateSelect.addEventListener(
+            "change",
+            function () {
+
+                const governorate =
+                    this.value;
+
+                citySelect.innerHTML = "";
+
+                citySelect.disabled = true;
+
+
+                if (!governorate) {
+
+                    citySelect.innerHTML = `
+                        <option value="">
+                            اختر المحافظة أولًا
+                        </option>
+                    `;
+
+                    return;
+                }
+
+
+                const cities =
+                    citiesByGovernorate[governorate] || [];
+
+
+                citySelect.innerHTML = `
+                    <option value="">
+                        اختر المدينة / المركز
+                    </option>
+                `;
+
+
+                cities.forEach(function (city) {
+
+                    const option =
+                        document.createElement("option");
+
+                    option.value = city;
+
+                    option.textContent = city;
+
+                    citySelect.appendChild(option);
+
+                });
+
+
+                citySelect.disabled = false;
+
+            }
+        );
+
+
+        /* =========================================
+           السماح بالأرقام فقط
+        ========================================= */
+
+        function allowOnlyNumbers(input) {
+
+            input.addEventListener(
+                "input",
+                function () {
+
+                    this.value =
+                        this.value
+                        .replace(/\D/g, "")
+                        .slice(0, 11);
+
+                }
+            );
+
+        }
+
+
+        allowOnlyNumbers(whatsappInput);
+
+        allowOnlyNumbers(phoneInput);
+
+
+        /* =========================================
+           جلب بيانات المنتج
+        ========================================= */
+
+        let checkoutProduct = null;
+
+
+        try {
+
+            const savedProduct =
+                localStorage.getItem(
+                    "checkoutProduct"
+                );
+
+            if (savedProduct) {
+
+                checkoutProduct =
+                    JSON.parse(savedProduct);
+
+            }
+
+        } catch (error) {
+
+            console.error(
+                "Product data error:",
+                error
+            );
+
+            checkoutProduct = null;
+
+        }
+
+
+        /* =========================================
+           عرض بيانات المنتج
+        ========================================= */
+
+        if (checkoutProduct) {
+
+            const productName =
+                checkoutProduct.name ||
+                "غير محدد";
+
+            const productPrice =
+                checkoutProduct.price ||
+                "غير محدد";
+
+            const productColor =
+                checkoutProduct.color ||
+                "غير محدد";
+
+            const productSize =
+                checkoutProduct.size ||
+                "غير محدد";
+
+            const productQuantity =
+                checkoutProduct.quantity ||
+                1;
+
+            const productImage =
+                checkoutProduct.image ||
+                "";
+
+
+            /* =========================
+               عرض للعميل
+            ========================= */
+
+            document.getElementById(
+                "showProductName"
+            ).textContent =
+                productName;
+
+
+            document.getElementById(
+                "showProductPrice"
+            ).textContent =
+                productPrice;
+
+
+            document.getElementById(
+                "showProductColor"
+            ).textContent =
+                productColor;
+
+
+            document.getElementById(
+                "showProductSize"
+            ).textContent =
+                productSize;
+
+
+            document.getElementById(
+                "showProductQuantity"
+            ).textContent =
+                productQuantity;
+
+
+            /* =========================
+               بيانات الإيميل
+            ========================= */
+
+            document.getElementById(
+                "emailProductName"
+            ).value =
+                productName;
+
+
+            document.getElementById(
+                "emailProductPrice"
+            ).value =
+                productPrice;
+
+
+            document.getElementById(
+                "emailProductColor"
+            ).value =
+                productColor;
+
+
+            document.getElementById(
+                "emailProductSize"
+            ).value =
+                productSize;
+
+
+            document.getElementById(
+                "emailProductQuantity"
+            ).value =
+                productQuantity;
+
+
+            document.getElementById(
+                "emailProductImage"
+            ).value =
+                productImage;
+
+
+            /* =========================
+               تفاصيل الطلب
+            ========================= */
+
+            document.getElementById(
+                "emailOrderDetails"
+            ).value =
+
+                "🛍️ تفاصيل المنتج\n\n" +
+
+                "اسم المنتج: " +
+                productName +
+
+                "\n" +
+
+                "السعر: " +
+                productPrice +
+
+                "\n" +
+
+                "اللون: " +
+                productColor +
+
+                "\n" +
+
+                "المقاس: " +
+                productSize +
+
+                "\n" +
+
+                "الكمية: " +
+                productQuantity;
+
+        }
+
+
+        /* =========================================
+           لو مفيش منتج
+        ========================================= */
+
+        else {
+
+            document.getElementById(
+                "showProductName"
+            ).textContent =
+                "لم يتم العثور على المنتج";
+
+            document.getElementById(
+                "showProductPrice"
+            ).textContent =
+                "-";
+
+            document.getElementById(
+                "showProductColor"
+            ).textContent =
+                "-";
+
+            document.getElementById(
+                "showProductSize"
+            ).textContent =
+                "-";
+
+            document.getElementById(
+                "showProductQuantity"
+            ).textContent =
+                "-";
+
+        }
+
+
+        /* =========================================
+           إرسال الطلب
+        ========================================= */
+
+        orderForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                /* إخفاء رسالة الخطأ */
+
+                errorMessage.style.display =
+                    "none";
+
+
+                /* منع الضغط مرتين */
+
+                submitBtn.disabled =
+                    true;
+
+                buttonText.style.display =
+                    "none";
+
+                loading.style.display =
+                    "flex";
+
+
+                /* =================================
+                   قراءة البيانات
+                ================================= */
+
+                const name =
+                    nameInput.value.trim();
+
+                const governorate =
+                    governorateSelect.value;
+
+                const city =
+                    citySelect.value;
+
+                const street =
+                    document.getElementById(
+                        "street"
+                    ).value.trim();
+
+                const whatsapp =
+                    whatsappInput.value.trim();
+
+                const phone =
+                    phoneInput.value.trim();
+
+
+                /* =================================
+                   التحقق من الاسم
+                ================================= */
+
+                const nameParts =
+                    name
+                        .split(/\s+/)
+                        .filter(Boolean);
+
+
+                if (nameParts.length < 3) {
+
+                    errorMessage.textContent =
+                        "من فضلك اكتب الاسم ثلاثي على الأقل.";
+
+                    errorMessage.style.display =
+                        "block";
+
+                    resetSubmitButton();
+
+                    nameInput.focus();
+
+                    return;
+
+                }
+
+
+                /* =================================
+                   التحقق من أرقام الهاتف
+                ================================= */
+
+                const egyptianPhoneRegex =
+                    /^01[0125][0-9]{8}$/;
+
+
+                if (
+                    !egyptianPhoneRegex.test(phone)
+                ) {
+
+                    errorMessage.textContent =
+                        "رقم الهاتف يجب أن يكون 11 رقمًا ويبدأ بـ 010 أو 011 أو 012 أو 015.";
+
+                    errorMessage.style.display =
+                        "block";
+
+                    resetSubmitButton();
+
+                    phoneInput.focus();
+
+                    return;
+
+                }
+
+
+                if (
+                    !egyptianPhoneRegex.test(whatsapp)
+                ) {
+
+                    errorMessage.textContent =
+                        "رقم الواتساب يجب أن يكون 11 رقمًا ويبدأ بـ 010 أو 011 أو 012 أو 015.";
+
+                    errorMessage.style.display =
+                        "block";
+
+                    resetSubmitButton();
+
+                    whatsappInput.focus();
+
+                    return;
+
+                }
+
+
+                /* =================================
+                   التحقق من العنوان
+                ================================= */
+
+                if (!governorate) {
+
+                    errorMessage.textContent =
+                        "من فضلك اختر المحافظة.";
+
+                    errorMessage.style.display =
+                        "block";
+
+                    resetSubmitButton();
+
+                    governorateSelect.focus();
+
+                    return;
+
+                }
+
+
+                if (!city) {
+
+                    errorMessage.textContent =
+                        "من فضلك اختر المدينة أو المركز.";
+
+                    errorMessage.style.display =
+                        "block";
+
+                    resetSubmitButton();
+
+                    citySelect.focus();
+
+                    return;
+
+                }
+
+
+                if (!street) {
+
+                    errorMessage.textContent =
+                        "من فضلك اكتب العنوان بالتفصيل.";
+
+                    errorMessage.style.display =
+                        "block";
+
+                    resetSubmitButton();
+
+                    document.getElementById(
+                        "street"
+                    ).focus();
+
+                    return;
+
+                }
+
+
+                /* =================================
+                   التاريخ والوقت
+                ================================= */
+
+                const orderDate =
+                    new Date()
+                        .toLocaleString("ar-EG");
+
+
+                /* =================================
+                   إضافة التاريخ للتفاصيل
+                ================================= */
+
+                document.getElementById(
+                    "emailOrderDetails"
+                ).value +=
+
+                    "\n\n" +
+
+                    "📍 المحافظة: " +
+                    governorate +
+
+                    "\n" +
+
+                    "🏙️ المدينة / المركز: " +
+                    city +
+
+                    "\n" +
+
+                    "📅 تاريخ الطلب: " +
+                    orderDate;
+
+
+                /* =================================
+                   حفظ نسخة محلية
+                ================================= */
+
+                const orderData = {
+
+                    customer: {
+
+                        name:
+                            name,
+
+                        governorate:
+                            governorate,
+
+                        city:
+                            city,
+
+                        street:
+                            street,
+
+                        whatsapp:
+                            whatsapp,
+
+                        phone:
+                            phone
+
+                    },
+
+                    product:
+                        checkoutProduct,
+
+                    date:
+                        orderDate
+
+                };
+
+
+                localStorage.setItem(
+
+                    "customerOrderData",
+
+                    JSON.stringify(orderData)
+
+                );
+
+
+                /* =================================
+                   إرسال Formspree
+                ================================= */
+
+                try {
+
+                    const response =
+                        await fetch(
+
+                            orderForm.action,
+
+                            {
+
+                                method:
+                                    "POST",
+
+                                body:
+                                    new FormData(
+                                        orderForm
+                                    ),
+
+                                headers: {
+
+                                    "Accept":
+                                        "application/json"
+
+                                }
+
+                            }
+
+                        );
+
+
+                    /* =================================
+                       نجاح
+                    ================================= */
+
+                    if (response.ok) {
+
+                        checkoutContent.style.display =
+                            "none";
+
+                        backLink.style.display =
+                            "none";
+
+                        successMessage.style.display =
+                            "block";
+
+
+                        /* حذف المنتج بعد نجاح الطلب */
+
+                        localStorage.removeItem(
+                            "checkoutProduct"
+                        );
+
+                    }
+
+
+                    /* =================================
+                       فشل
+                    ================================= */
+
+                    else {
+
+                        throw new Error(
+                            "Formspree request failed"
+                        );
+
+                    }
+
+                }
+
+
+                catch (error) {
+
+                    console.error(
+                        "Order Error:",
+                        error
+                    );
+
+
+                    errorMessage.textContent =
+                        "تعذر إرسال الطلب. تأكد من اتصال الإنترنت وحاول مرة أخرى.";
+
+
+                    errorMessage.style.display =
+                        "block";
+
+
+                    resetSubmitButton();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           إعادة زر الطلب لحالته الطبيعية
+        ========================================= */
+
+        function resetSubmitButton() {
+
+            submitBtn.disabled =
+                false;
+
+            buttonText.style.display =
+                "inline";
+
+            loading.style.display =
+                "none";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

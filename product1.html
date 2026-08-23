@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="تفاصيل المنتج | الأمير"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <title>تفاصيل المنتج | الأمير</title>
+
+
+    <!-- ================= GOOGLE FONT ================= -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ================= FONT AWESOME ================= -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- ================= PRODUCT CSS ================= -->
+
+    <link
+        rel="stylesheet"
+        href="product.css"
+    >
+
+
+    <style>
+
+        /* =========================
+           الألوان
+        ========================= */
+
+        .color-options {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 12px;
+
+        }
+
+
+        .color-option {
+
+            width: 44px;
+
+            height: 44px;
+
+            padding: 0;
+
+            border-radius: 50%;
+
+            border: 3px solid transparent;
+
+            cursor: pointer;
+
+            position: relative;
+
+            transition: 0.25s ease;
+
+            box-shadow:
+                0 3px 10px rgba(0, 0, 0, 0.12);
+
+        }
+
+
+        .color-option:hover {
+
+            transform: scale(1.08);
+
+        }
+
+
+        .color-option.active {
+
+            border-color: #111;
+
+            transform: scale(1.08);
+
+            box-shadow:
+                0 0 0 3px #fff,
+                0 0 0 5px #111;
+
+        }
+
+
+        .color-option.white-color {
+
+            border-color: #ccc;
+
+        }
+
+
+        .color-option.white-color.active {
+
+            border-color: #111;
+
+        }
+
+
+        .color-option::after {
+
+            content: "✓";
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: transparent;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+        }
+
+
+        .color-option.active::after {
+
+            color: #fff;
+
+            text-shadow:
+                0 1px 3px #000;
+
+        }
+
+
+        .color-option.white-color.active::after {
+
+            color: #111;
+
+            text-shadow: none;
+
+        }
+
+
+        /* =========================
+           اسم اللون
+        ========================= */
+
+        .selected-option {
+
+            margin-top: 12px;
+
+            font-size: 16px;
+
+            color: #777;
+
+        }
+
+
+        /* =========================
+           المقاسات
+        ========================= */
+
+        .size-options {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 12px;
+
+        }
+
+
+        .size-options button {
+
+            min-width: 55px;
+
+            height: 45px;
+
+            padding: 0 15px;
+
+            border: 1px solid #ddd;
+
+            background: #656879;
+
+            color: #fff;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            font-family: inherit;
+
+            font-size: 17px;
+
+            transition: 0.25s ease;
+
+        }
+
+
+        .size-options button:hover {
+
+            border-color: #111;
+
+            background: #111;
+
+            color: #fff;
+
+        }
+
+
+        .size-options button.active {
+
+            background: #111;
+
+            color: #fff;
+
+            border-color: #111;
+
+        }
+
+
+        /* =========================
+           زر الشراء
+        ========================= */
+
+        .add-product-btn {
+
+            cursor: pointer;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <div class="product-logo">
+
+            <a href="index.html">
+
+                <img
+                    src="images/تنزيل__1_-removebg-preview.png"
+                    alt="لوجو الأمير"
+                >
+
+            </a>
+
+        </div>
+
+
+        <div class="back-home">
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+                العودة للمتجر
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= PRODUCT ================= -->
+
+    <main class="product-page">
+
+        <div class="product-container">
+
+
+            <!-- ================= صور المنتج ================= -->
+
+            <div class="product-gallery">
+
+                <div class="product-image-box">
+
+
+                    <button
+                        type="button"
+                        class="gallery-arrow gallery-prev"
+                        id="prevImage"
+                        aria-label="الصورة السابقة"
+                    >
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <img
+                        id="productImage"
+                        src="images/me/photo_1_2026-08-23_13-13-40.jpg"
+                        alt="صورة المنتج"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="gallery-arrow gallery-next"
+                        id="nextImage"
+                        aria-label="الصورة التالية"
+                    >
+
+                        <i class="fa-solid fa-chevron-left"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- ================= الصور المصغرة ================= -->
+
+                <div
+                    class="product-thumbnails"
+                    id="productThumbnails"
+                >
+
+                    <button
+                        type="button"
+                        class="thumbnail active"
+                        data-index="0"
+                    >
+
+                        <img
+                            src="images/me/photo_1_2026-08-23_13-13-40.jpg"
+                            alt="صورة المنتج 1"
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="thumbnail"
+                        data-index="1"
+                    >
+
+                        <img
+                            src="images/me/photo_7_2026-08-23_13-13-41.jpg"
+                            alt="صورة المنتج 2"
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="thumbnail"
+                        data-index="2"
+                    >
+
+                        <img
+                            src="images/me/photo_3_2026-08-23_21-35-51.jpg"
+                            alt="صورة المنتج 3"
+                        >
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="thumbnail"
+                        data-index="2"
+                    >
+
+                        <img
+                            src="images/me/photo_8_2026-08-23_13-13-41.jpg"
+                            alt="صورة المنتج 3"
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="thumbnail"
+                        data-index="3"
+                    >
+
+                        <img
+                            src="images/me/photo_2_2026-08-23_21-35-51.jpg"
+                            alt="صورة المنتج 4"
+                        >
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="thumbnail"
+                        data-index="2"
+                    >
+
+                        <img
+                            src="images/me/photo_5_2026-08-23_13-13-41.jpg"
+                            alt="صورة المنتج 3"
+                        >
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="thumbnail"
+                        data-index="2"
+                    >
+
+                        <img
+                            src="images/me/photo_1_2026-08-23_21-35-51 copy.jpg"
+                            alt="صورة المنتج 3"
+                        >
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="thumbnail"
+                        data-index="2"
+                    >
+
+                        <img
+                            src="images/me/photo_6_2026-08-23_13-13-41.jpg"
+                            alt="صورة المنتج 3"
+                        >
+
+                    </button>
+
+
+            
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= تفاصيل المنتج ================= -->
+
+            <div class="product-info-box">
+
+
+                <span class="product-label">
+
+                    الأمير
+
+                </span>
+
+
+                <h1 id="productName">
+
+                    المنتج
+
+                </h1>
+
+
+                <div
+                    id="productPrice"
+                    class="product-price"
+                >
+
+                    250 جنيه
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <!-- ================= اللون ================= -->
+
+                <div class="option-group">
+
+                    <h3>
+
+                        اختر اللون
+
+                    </h3>
+
+
+                    <div
+                        id="colorOptions"
+                        class="color-options"
+                    >
+
+                    </div>
+
+
+                    <p
+                        id="selectedColor"
+                        class="selected-option"
+                    >
+
+                        اختر لونًا
+
+                    </p>
+
+                </div>
+
+
+                <!-- ================= المقاس ================= -->
+
+                <div class="option-group">
+
+                    <h3>
+
+                        اختر المقاس
+
+                    </h3>
+
+
+                    <div
+                        id="sizeOptions"
+                        class="size-options"
+                    >
+
+
+                        <button
+                            type="button"
+                            data-size="M"
+                        >
+                            M
+                        </button>
+
+
+                        <button
+                            type="button"
+                            data-size="L"
+                        >
+                            L
+                        </button>
+
+
+                        <button
+                            type="button"
+                            data-size="XL"
+                        >
+                            XL
+                        </button>
+
+                    </div>
+
+
+                    <p
+                        id="selectedSize"
+                        class="selected-option"
+                    >
+
+                        اختر المقاس
+
+                    </p>
+
+                </div>
+
+
+                <!-- ================= الكمية ================= -->
+
+                <div class="option-group">
+
+                    <h3>
+
+                        الكمية
+
+                    </h3>
+
+
+                    <div class="quantity-box">
+
+
+                        <button
+                            type="button"
+                            id="decreaseBtn"
+                            aria-label="تقليل الكمية"
+                        >
+
+                            -
+
+                        </button>
+
+
+                        <span id="quantity">
+
+                            1
+
+                        </span>
+
+
+                        <button
+                            type="button"
+                            id="increaseBtn"
+                            aria-label="زيادة الكمية"
+                        >
+
+                            +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= شراء الآن ================= -->
+
+                <button
+                    type="button"
+                    id="addProductBtn"
+                    class="add-product-btn"
+                >
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    شراء الآن
+
+                </button>
+
+
+                <a
+                    href="index.html"
+                    class="continue-shopping"
+                >
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                    متابعة التسوق
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        /* =================================================
+           بيانات المنتج
+        ================================================= */
+
+        const productData = {
+
+            name: "تيشرت اوفر سايز ESETE ",
+
+            price: "250 جنيه",
+
+            colors: [
+
+                {
+                    name: "أسود",
+                    value: "#000000"
+                },
+
+            
+
+                {
+                    name: "برجاندي",
+                    value: "#d90429"
+                },
+
+                {
+                    name: "زيتي",
+                    value: "#0c6100"
+                },
+
+                {
+                    name: "رمادي",
+                    value: "#777777"
+                }
+
+            ]
+
+        };
+
+
+        /* =================================================
+           وضع اسم وسعر المنتج
+        ================================================= */
+
+        document.getElementById(
+            "productName"
+        ).textContent =
+            productData.name;
+
+
+        document.getElementById(
+            "productPrice"
+        ).textContent =
+            productData.price;
+
+
+        /* =================================================
+           صور المنتج
+        ================================================= */
+
+        const productImages = [
+
+            "images/me/photo_1_2026-08-23_13-13-40.jpg",
+
+            "images/me/photo_7_2026-08-23_13-13-41.jpg",
+
+            "images/me/photo_3_2026-08-23_21-35-51.jpg",
+
+            "images/me/photo_8_2026-08-23_13-13-41.jpg",
+
+            "images/me/photo_2_2026-08-23_21-35-51.jpg",
+
+            "images/me/photo_5_2026-08-23_13-13-41.jpg",
+            
+            "images/me/photo_1_2026-08-23_21-35-51 copy.jpg",
+
+            "images/me/photo_6_2026-08-23_13-13-41.jpg"
+
+
+    
+        ];
+
+
+        const productImage =
+            document.getElementById(
+                "productImage"
+            );
+
+
+        const thumbnails =
+            document.querySelectorAll(
+                ".thumbnail"
+            );
+
+
+        const prevImage =
+            document.getElementById(
+                "prevImage"
+            );
+
+
+        const nextImage =
+            document.getElementById(
+                "nextImage"
+            );
+
+
+        let currentImage = 0;
+
+
+        /* =================================================
+           تغيير الصورة
+        ================================================= */
+
+        function changeProductImage(index) {
+
+            if (index < 0) {
+
+                index =
+                    productImages.length - 1;
+
+            }
+
+
+            if (
+                index >=
+                productImages.length
+            ) {
+
+                index = 0;
+
+            }
+
+
+            currentImage = index;
+
+
+            productImage.src =
+                productImages[currentImage];
+
+
+            thumbnails.forEach(
+                (thumbnail, i) => {
+
+                    thumbnail.classList.toggle(
+                        "active",
+                        i === currentImage
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           تغيير الصور تلقائيًا كل 1.5 ثانية
+        ================================================= */
+
+        let autoSlide = setInterval(() => {
+
+            changeProductImage(
+                currentImage + 1
+            );
+
+        }, 3000);
+
+
+        /* =================================================
+           السابق
+        ================================================= */
+
+        prevImage.addEventListener(
+            "click",
+            () => {
+
+                changeProductImage(
+                    currentImage - 1
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           التالي
+        ================================================= */
+
+        nextImage.addEventListener(
+            "click",
+            () => {
+
+                changeProductImage(
+                    currentImage + 1
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           الصور المصغرة
+        ================================================= */
+
+        thumbnails.forEach(
+            thumbnail => {
+
+                thumbnail.addEventListener(
+                    "click",
+                    () => {
+
+                        const index =
+                            Number(
+                                thumbnail.dataset.index
+                            );
+
+
+                        changeProductImage(
+                            index
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           الكيبورد
+        ================================================= */
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key ===
+                    "ArrowRight"
+                ) {
+
+                    changeProductImage(
+                        currentImage - 1
+                    );
+
+                }
+
+
+                if (
+                    event.key ===
+                    "ArrowLeft"
+                ) {
+
+                    changeProductImage(
+                        currentImage + 1
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           الألوان
+        ================================================= */
+
+        const colorOptions =
+            document.getElementById(
+                "colorOptions"
+            );
+
+
+        const selectedColorElement =
+            document.getElementById(
+                "selectedColor"
+            );
+
+
+        let selectedColor = "";
+
+
+        /* =================================================
+           إنشاء أزرار الألوان
+        ================================================= */
+
+        productData.colors.forEach(
+            color => {
+
+                const button =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                button.type = "button";
+
+
+                button.className =
+                    "color-option";
+
+
+                if (color.white) {
+
+                    button.classList.add(
+                        "white-color"
+                    );
+
+                }
+
+
+                button.style.backgroundColor =
+                    color.value;
+
+
+                button.title =
+                    color.name;
+
+
+                button.setAttribute(
+                    "aria-label",
+                    color.name
+                );
+
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        document
+                            .querySelectorAll(
+                                ".color-option"
+                            )
+                            .forEach(
+                                item => {
+
+                                    item.classList
+                                        .remove(
+                                            "active"
+                                        );
+
+                                }
+                            );
+
+
+                        button.classList.add(
+                            "active"
+                        );
+
+
+                        selectedColor =
+                            color.name;
+
+
+                        selectedColorElement
+                            .textContent =
+                            "اللون المختار: " +
+                            selectedColor;
+
+                    }
+                );
+
+
+                colorOptions.appendChild(
+                    button
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           المقاسات
+        ================================================= */
+
+        const sizeButtons =
+            document.querySelectorAll(
+                "#sizeOptions button"
+            );
+
+
+        let selectedSize = "";
+
+
+        sizeButtons.forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        sizeButtons.forEach(
+                            btn => {
+
+                                btn.classList
+                                    .remove(
+                                        "active"
+                                    );
+
+                            }
+                        );
+
+
+                        button.classList.add(
+                            "active"
+                        );
+
+
+                        selectedSize =
+                            button.dataset.size;
+
+
+                        document.getElementById(
+                            "selectedSize"
+                        ).textContent =
+                            "المقاس المختار: " +
+                            selectedSize;
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           الكمية
+        ================================================= */
+
+        const quantityElement =
+            document.getElementById(
+                "quantity"
+            );
+
+
+        const decreaseBtn =
+            document.getElementById(
+                "decreaseBtn"
+            );
+
+
+        const increaseBtn =
+            document.getElementById(
+                "increaseBtn"
+            );
+
+
+        let quantity = 1;
+
+
+        increaseBtn.addEventListener(
+            "click",
+            () => {
+
+                quantity++;
+
+                quantityElement.textContent =
+                    quantity;
+
+            }
+        );
+
+
+        decreaseBtn.addEventListener(
+            "click",
+            () => {
+
+                if (quantity > 1) {
+
+                    quantity--;
+
+                    quantityElement.textContent =
+                        quantity;
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           شراء الآن
+        ================================================= */
+
+        const addProductBtn =
+            document.getElementById(
+                "addProductBtn"
+            );
+
+
+        addProductBtn.addEventListener(
+            "click",
+            () => {
+
+                /* =========================
+                   التحقق من اللون
+                ========================= */
+
+                if (!selectedColor) {
+
+                    alert(
+                        "من فضلك اختر اللون أولًا."
+                    );
+
+                    return;
+
+                }
+
+
+                /* =========================
+                   التحقق من المقاس
+                ========================= */
+
+                if (!selectedSize) {
+
+                    alert(
+                        "من فضلك اختر المقاس أولًا."
+                    );
+
+                    return;
+
+                }
+
+
+                /* =========================
+                   بيانات الطلب
+                ========================= */
+
+                const checkoutProduct = {
+
+                    name:
+                        productData.name,
+
+                    price:
+                        productData.price,
+
+                    color:
+                        selectedColor,
+
+                    size:
+                        selectedSize,
+
+                    quantity:
+                        quantity,
+
+                    image:
+                        productImage.src
+
+                };
+
+
+                /* =========================
+                   حفظ المنتج
+                ========================= */
+
+                localStorage.setItem(
+
+                    "checkoutProduct",
+
+                    JSON.stringify(
+                        checkoutProduct
+                    )
+
+                );
+
+
+                /* =========================
+                   الانتقال لإتمام الطلب
+                ========================= */
+
+                window.location.href =
+                    "checkout.html";
+
+            }
+        );
+        /* =================================================
+   تحريك الصور بالسحب على الموبايل
+================================================= */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+productImage.addEventListener("touchstart", (event) => {
+
+    touchStartX = event.touches[0].clientX;
+
+});
+
+
+productImage.addEventListener("touchend", (event) => {
+
+    touchEndX = event.changedTouches[0].clientX;
+
+    const difference = touchStartX - touchEndX;
+
+    // سحب لليسار → الصورة التالية
+    if (difference > 50) {
+
+        changeProductImage(currentImage + 1);
+
+    }
+
+    // سحب لليمين → الصورة السابقة
+    else if (difference < -50) {
+
+        changeProductImage(currentImage - 1);
+
+    }
+
+});
+
+    </script>
+
+
+</body>
+
+</html>
