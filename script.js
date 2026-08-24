@@ -26,7 +26,7 @@ const productsData = {
 
     1: {
         name: "تيشيرت اوفر سايز ESETE",
-        price: 250,
+        price: 200,
 
         images: [
             "images/me/photo_1_2026-08-23_13-13-40.jpg",
