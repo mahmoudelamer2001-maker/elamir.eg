@@ -29,10 +29,10 @@ const productsData = {
         price: 200,
 
         images: [
-            "images/me/photo_1_2026-08-23_13-13-40.jpg",
-            "images/me/photo_1_2026-08-23_21-35-51 copy.jpg",
-            "images/me/photo_2_2026-08-23_21-35-51.jpg",
-            "images/me/photo_3_2026-08-23_21-35-51.jpg"
+              "images/me/ramade esete.jpg",
+            "images/me/nabete esete.jpg",
+            "images/me/zete esete.jpg",
+            "images/me/asoad esete.jpg"
         ],
 
         colors: [
