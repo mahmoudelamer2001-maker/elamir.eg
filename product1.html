@@ -80,6 +80,8 @@
 
             height: 44px;
 
+            padding: 0;
+
             border-radius: 50%;
 
             border: 3px solid transparent;
@@ -216,6 +218,8 @@
 
             background: #656879;
 
+            color: #fff;
+
             border-radius: 10px;
 
             cursor: pointer;
@@ -232,6 +236,10 @@
         .size-options button:hover {
 
             border-color: #111;
+
+            background: #111;
+
+            color: #fff;
 
         }
 
@@ -298,7 +306,6 @@
     </header>
 
 
-
     <!-- ================= PRODUCT ================= -->
 
     <main class="product-page">
@@ -309,7 +316,6 @@
             <!-- ================= صور المنتج ================= -->
 
             <div class="product-gallery">
-
 
                 <div class="product-image-box">
 
@@ -328,7 +334,7 @@
 
                     <img
                         id="productImage"
-                        src="images/زيتي.jpg"
+                        src="images/nabete esete.jpg"
                         alt="صورة المنتج"
                     >
 
@@ -347,14 +353,12 @@
                 </div>
 
 
-
                 <!-- ================= الصور المصغرة ================= -->
 
                 <div
                     class="product-thumbnails"
                     id="productThumbnails"
                 >
-
 
                     <button
                         type="button"
@@ -363,25 +367,12 @@
                     >
 
                         <img
-                            src="images/زيتي.jpg"
+                            src="images/nabete esete.jpg"
                             alt="صورة المنتج 1"
                         >
 
                     </button>
 
-
-                    <button
-                        type="button"
-                        class="thumbnail"
-                        data-index="1"
-                    >
-
-                        <img
-                            src="images/نبيتي.jpg"
-                            alt="صورة المنتج 2"
-                        >
-
-                    </button>
 
 
                     <button
@@ -391,12 +382,11 @@
                     >
 
                         <img
-                            src="images/ابيض.jpg"
+                            src="images/zete esete.jpg"
                             alt="صورة المنتج 3"
                         >
 
                     </button>
-
 
                     <button
                         type="button"
@@ -405,29 +395,29 @@
                     >
 
                         <img
-                            src="images/كحلي.jpg"
+                            src="images/ramade esete.jpg"
                             alt="صورة المنتج 4"
                         >
 
                     </button>
 
-
                     <button
                         type="button"
                         class="thumbnail"
-                        data-index="4"
+                        data-index="2"
                     >
 
                         <img
-                            src="images/اسود.jpg"
-                            alt="صورة المنتج 5"
+                            src="images/asoad esete.jpg"
+                            alt="صورة المنتج 3"
                         >
 
                     </button>
+
+                    
                 </div>
 
             </div>
-
 
 
             <!-- ================= تفاصيل المنتج ================= -->
@@ -454,13 +444,12 @@
                     class="product-price"
                 >
 
-                    210 جنيه
+                    200 جنيه
 
                 </div>
 
 
                 <div class="divider"></div>
-
 
 
                 <!-- ================= اللون ================= -->
@@ -479,8 +468,6 @@
                         class="color-options"
                     >
 
-                        <!-- الألوان تظهر هنا -->
-
                     </div>
 
 
@@ -494,7 +481,6 @@
                     </p>
 
                 </div>
-
 
 
                 <!-- ================= المقاس ================= -->
@@ -536,12 +522,6 @@
                         >
                             XL
                         </button>
-                        <button
-                            type="button"
-                            data-size="XXL"
-                        >
-                            XXL
-                        </button>
 
                     </div>
 
@@ -556,7 +536,6 @@
                     </p>
 
                 </div>
-
 
 
                 <!-- ================= الكمية ================= -->
@@ -576,6 +555,7 @@
                         <button
                             type="button"
                             id="decreaseBtn"
+                            aria-label="تقليل الكمية"
                         >
 
                             -
@@ -593,17 +573,16 @@
                         <button
                             type="button"
                             id="increaseBtn"
+                            aria-label="زيادة الكمية"
                         >
 
                             +
 
                         </button>
 
-
                     </div>
 
                 </div>
-
 
 
                 <!-- ================= شراء الآن ================= -->
@@ -640,7 +619,6 @@
     </main>
 
 
-
     <!-- ================= JAVASCRIPT ================= -->
 
     <script>
@@ -649,15 +627,11 @@
            بيانات المنتج
         ================================================= */
 
-        /*
-            عدّل الاسم والسعر هنا لكل منتج.
-        */
-
         const productData = {
 
-            name: "Ranger T-shirt",
+            name: "تيشرت اوفر سايز ESETE ",
 
-            price: "210 جنيه",
+            price: "200 جنيه",
 
             colors: [
 
@@ -666,28 +640,26 @@
                     value: "#000000"
                 },
 
-                {
-                    name: "أبيض",
-                    value: "#ffffff",
-                    white: true
-                },
+            
 
                 {
                     name: "برجاندي",
                     value: "#d90429"
                 },
-                 {
-                    name:"زيتي",
-                    value: "#004414"
-                 },
+
                 {
-                    name: "كحلي",
-                    value: "#001344"
+                    name: "زيتي",
+                    value: "#0c6100"
                 },
+
+                {
+                    name: "رمادي",
+                    value: "#777777"
+                }
+
             ]
 
         };
-
 
 
         /* =================================================
@@ -706,22 +678,23 @@
             productData.price;
 
 
-
         /* =================================================
            صور المنتج
         ================================================= */
 
         const productImages = [
 
-            "images/زيتي.jpg",
+            "images/nabete esete.jpg",
 
-            "images/نبيتي.jpg",
+            "images/zete esete.jpg",
 
-            "images/ابيض.jpg",
+            "images/ramade esete.jpg",
 
-            "images/كحلي.jpg",
+            "images/asoad esete.jpg",
+            
+            
 
-            "images/اسود.jpg",
+    
         ];
 
 
@@ -750,7 +723,6 @@
 
 
         let currentImage = 0;
-
 
 
         /* =================================================
@@ -798,6 +770,18 @@
         }
 
 
+        /* =================================================
+           تغيير الصور تلقائيًا كل 1.5 ثانية
+        ================================================= */
+
+        let autoSlide = setInterval(() => {
+
+            changeProductImage(
+                currentImage + 1
+            );
+
+        }, 3000);
+
 
         /* =================================================
            السابق
@@ -815,7 +799,6 @@
         );
 
 
-
         /* =================================================
            التالي
         ================================================= */
@@ -830,7 +813,6 @@
 
             }
         );
-
 
 
         /* =================================================
@@ -859,7 +841,6 @@
 
             }
         );
-
 
 
         /* =================================================
@@ -897,7 +878,6 @@
         );
 
 
-
         /* =================================================
            الألوان
         ================================================= */
@@ -917,14 +897,12 @@
         let selectedColor = "";
 
 
-
         /* =================================================
            إنشاء أزرار الألوان
         ================================================= */
 
         productData.colors.forEach(
             color => {
-
 
                 const button =
                     document.createElement(
@@ -962,14 +940,9 @@
                 );
 
 
-                /* =========================
-                   اختيار اللون
-                ========================= */
-
                 button.addEventListener(
                     "click",
                     () => {
-
 
                         document
                             .querySelectorAll(
@@ -1013,7 +986,6 @@
         );
 
 
-
         /* =================================================
            المقاسات
         ================================================= */
@@ -1027,15 +999,12 @@
         let selectedSize = "";
 
 
-
         sizeButtons.forEach(
             button => {
-
 
                 button.addEventListener(
                     "click",
                     () => {
-
 
                         sizeButtons.forEach(
                             btn => {
@@ -1071,7 +1040,6 @@
         );
 
 
-
         /* =================================================
            الكمية
         ================================================= */
@@ -1097,7 +1065,6 @@
         let quantity = 1;
 
 
-
         increaseBtn.addEventListener(
             "click",
             () => {
@@ -1109,7 +1076,6 @@
 
             }
         );
-
 
 
         decreaseBtn.addEventListener(
@@ -1129,7 +1095,6 @@
         );
 
 
-
         /* =================================================
            شراء الآن
         ================================================= */
@@ -1143,7 +1108,6 @@
         addProductBtn.addEventListener(
             "click",
             () => {
-
 
                 /* =========================
                    التحقق من اللون
@@ -1226,16 +1190,7 @@
 
             }
         );
-/* =================================================
-   تغيير الصور تلقائيًا كل 3 ثواني
-================================================= */
-
-setInterval(() => {
-
-    changeProductImage(currentImage + 1);
-
-}, 3000);
-/* =================================================
+        /* =================================================
    تحريك الصور بالسحب على الموبايل
 ================================================= */
 
@@ -1270,6 +1225,7 @@ productImage.addEventListener("touchend", (event) => {
     }
 
 });
+
     </script>
 
 

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="الامير - متجر ملابس عصري بجودة عالية"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <title>الامير | متجر الملابس</title>
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/jpeg"
+        href="images/cropped_circle_image.png"
+    >
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="images/cropped_circle_image.png">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- Modern Enhancements -->
+    <style>
+
+        :root {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           PRODUCT CARD
+        ========================= */
+
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow:
+                0 14px 35px rgba(0, 0, 0, .16);
+        }
+
+        .product-card img {
+            transition:
+                transform .35s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.035);
+        }
+
+        /* =========================
+           PRODUCT ACTIONS
+        ========================= */
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .product-actions button,
+        .product-actions a {
+            flex: 1;
+            min-width: 0;
+            height: 46px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 7px;
+
+            border-radius: 12px;
+
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+
+            text-decoration: none;
+            cursor: pointer;
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease,
+                background .2s ease;
+        }
+
+        /* =========================
+           ADD TO CART
+        ========================= */
+
+        .add-product-btn {
+            border: none;
+            background: #0b0b0b;
+            color: #fff;
+        }
+
+        .add-product-btn:hover {
+            background: #222;
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, .18);
+        }
+
+        /* =========================
+           VIEW PRODUCT
+        ========================= */
+
+        .view-product-btn {
+            background: #f4f4f4;
+            color: #111;
+            border: 1px solid #ddd;
+        }
+
+        .view-product-btn:hover {
+            background: #e9e9e9;
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, .10);
+        }
+
+        /* =========================
+           ACTIVE
+        ========================= */
+
+        .product-actions button:active,
+        .product-actions a:active {
+            transform: scale(.97);
+        }
+
+        /* =========================
+           CHECKOUT
+        ========================= */
+
+        .checkout-btn {
+            cursor: pointer;
+
+            transition:
+                transform .2s ease,
+                filter .2s ease,
+                box-shadow .2s ease;
+        }
+
+        .checkout-btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.05);
+        }
+
+        .cart-section {
+            scroll-margin-top: 90px;
+        }
+
+        /* =========================
+           HERO VIDEO
+        ========================= */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                gap: 10px;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            .product-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+        }
+
+        @media (max-width: 480px) {
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-actions {
+                gap: 7px;
+            }
+
+            .product-actions button,
+            .product-actions a {
+                height: 43px;
+                font-size: 12px;
+                border-radius: 10px;
+                gap: 5px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <header>
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <a href="index.html">
+
+                <img
+                    src="images/photo_2026-08-23_02-54-05-removebg-preview.png"
+                    alt="لوجو الامير"
+                >
+
+            </a>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav>
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="#products">
+                المنتجات
+            </a>
+
+            <a href="#about">
+                من نحن
+            </a>
+
+            <a href="#contact">
+                تواصل معنا
+            </a>
+
+        </nav>
+
+
+        <!-- ICONS -->
+
+        <div class="icons">
+
+            <!-- SEARCH -->
+
+            <i
+                class="fa-solid fa-magnifying-glass"
+                id="searchIcon"
+                title="بحث"
+                role="button"
+                tabindex="0"
+            ></i>
+
+
+            <!-- CART -->
+
+            <div
+                class="cart"
+                id="cartIcon"
+                title="سلة المشتريات"
+            >
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span id="count">
+                    0
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="hero-video"
+        >
+
+            <source
+                src="assets/video/camal.mp4"
+                type="video/mp4"
+            >
+
+            متصفحك لا يدعم تشغيل الفيديو.
+
+        </video>
+
+
+        <div class="overlay"></div>
+
+
+        <div class="hero-content">
+
+            <h1>
+                الامير
+            </h1>
+
+            <p>
+                أناقة تبدأ من هنا
+            </p>
+
+            <a
+                href="#products"
+                id="shopBtn"
+            >
+                تسوق الآن
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRODUCTS
+    ========================= -->
+
+    <section
+        id="products"
+        class="products"
+    >
+
+        <h2>
+            أحدث المنتجات
+        </h2>
+
+
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+
+            <div
+                class="product-card"
+                data-product="1"
+            >
+
+                <img
+                    src="images/ramade esete.jpg"
+                    alt="تيشرت اوفر سايز ESETE"
+                    loading="lazy"
+                >
+
+
+                <div class="product-info">
+
+                    <h3>
+                        تيشرت اوفر سايز ESETE
+                    </h3>
+
+
+                    <p class="price">
+                        200 جنيه
+                    </p>
+
+
+                    <div class="product-actions">
+
+                        <!-- ADD TO CART -->
+
+                        <button
+                            type="button"
+                            class="add-product-btn"
+                            data-product="1"
+                        >
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            أضف إلى السلة
+
+                        </button>
+
+
+                        <!-- VIEW PRODUCT -->
+
+                        <a
+                            href="product1.html?product=1"
+                            class="view-product-btn"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                            عرض المنتج
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+<!-- PRODUCT 2 -->
+
+            <div
+                class="product-card"
+                data-product="2"
+            >
+
+                <img
+                    src="images/زيتي.jpg"
+                    alt="Ranger T-shirt"
+                    loading="lazy"
+                >
+
+
+                <div class="product-info">
+
+                    <h3>
+                       Ranger T-shirt
+                    </h3>
+
+
+                    <p class="price">
+                        210 جنيه
+                    </p>
+
+
+                    <div class="product-actions">
+
+                        <!-- ADD TO CART -->
+
+                        <button
+                            type="button"
+                            class="add-product-btn"
+                            data-product="2"
+                        >
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            أضف إلى السلة
+
+                        </button>
+
+
+                        <!-- VIEW PRODUCT -->
+
+                        <a
+                            href="product2.html?product=1"
+                            class="view-product-btn"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                            عرض المنتج
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section
+        class="about-section"
+        id="about"
+    >
+
+        <div class="about-content">
+
+            <h2>
+                من نحن
+            </h2>
+
+            <p>
+
+                <strong>
+                    الأمير — أناقة تُصنع بعناية.
+                </strong>
+
+                <br><br>
+
+                نقدم لك ملابس مختارة بعناية،
+                بخامات عالية الجودة وتصميمات عصرية
+                تهتم بأدق التفاصيل، علشان نوفر لك
+                إطلالة تجمع بين الأناقة والراحة والجودة.
+
+                <br><br>
+
+                🚚 نوصل لجميع محافظات مصر
+
+                <br>
+
+                👕 خامات مختارة بعناية
+
+                <br>
+
+                ✨ تصميمات عصرية تناسب ذوقك
+
+                <br>
+
+                📦 تغليف وتجهيز بعناية
+
+                <br><br>
+
+                هدفنا إن كل قطعة من
+
+                <strong>
+                    الأمير
+                </strong>
+
+                توصلك بالجودة اللي تستحقها
+                وتجربة تليق بيك.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CART
+    ========================= -->
+
+    <section class="cart-section">
+
+        <h2>
+            سلة المشتريات
+        </h2>
+
+
+        <div id="cart-items"></div>
+
+
+        <div class="cart-total">
+
+            <h3>
+
+                الإجمالي:
+
+                <span id="total-price">
+                    0
+                </span>
+
+                جنيه
+
+            </h3>
+
+
+            <button
+                type="button"
+                class="checkout-btn"
+                id="checkoutWhatsapp"
+            >
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                إتمام الطلب عبر واتساب
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section
+        id="contact"
+        class="contact-section"
+    >
+
+        <h2>
+            تواصل معنا
+        </h2>
+
+
+        <p>
+            تابع الامير على وسائل التواصل الاجتماعي
+        </p>
+
+
+        <div class="social-links">
+
+            <!-- FACEBOOK -->
+
+            <a
+                href="https://www.facebook.com/share/1AvV5Lpdi6/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+            >
+
+                <i class="fa-brands fa-facebook-f"></i>
+
+            </a>
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                href="https://www.instagram.com/elamir.eg?igsi=MW84dXJ5YW5od2dqZQ%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+            >
+
+                <i class="fa-brands fa-instagram"></i>
+
+            </a>
+
+
+            <!-- TIKTOK -->
+
+            <a
+                href="https://www.tiktok.com/@prova_store"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+            >
+
+                <i class="fa-brands fa-tiktok"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h3>
+            الامير
+        </h3>
+
+
+        <p>
+            أفضل متجر ملابس بتصميم عصري وجودة عالية
+        </p>
+
+
+        <p>
+            © 2026 الامير - جميع الحقوق محفوظة
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
