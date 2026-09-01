@@ -106,30 +106,55 @@ const productsData = {
 
 
     3: {
-        name: "بنطلون جينز",
-        price: 999,
+        name: "تيشرت اوفر سايز ساده",
+        price: 100,
 
         images: [
-            "images/photo_2026-07-31_06-25-46.jpg"
+            "images/كحلي ساده.jpg"
         ],
 
         colors: [
-            {
-                name: "أزرق",
-                value: "#183b63"
-            },
-            {
-                name: "أسود",
-                value: "#111111"
-            }
+             {
+                    name: "أسود",
+                    value: "#000000"
+                },
+
+                {
+                    name: "أبيض",
+                    value: "#ffffff",
+                    white: true
+                },
+
+                {
+                    name: "برجاندي",
+                    value: "#d90429"
+                },
+
+                {
+                    name: "كحلي",
+                    value: "#1d4ed8"
+                },
+
+                {
+                    name: "زيتي",
+                    value: "#00470d"
+                },
+
+                {
+                    name: "بني",
+                    value: "#783a02"
+                },
+                {
+                    name:"موف",
+                    value:"#9900c3"
+                }
         ],
 
         sizes: [
-            "30",
-            "32",
-            "34",
-            "36",
-            "38"
+            "M",
+            "L",
+            "XL",
+            "XXL"
         ]
     },
 
