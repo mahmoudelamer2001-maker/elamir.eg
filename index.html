@@ -39,7 +39,7 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Aref+Ruqaa:wght@400;700&display=swap"
         rel="stylesheet"
     >
 
@@ -378,40 +378,42 @@
         }
 
         .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            padding: 17px 18px;
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, .05);
-        }
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 17px 18px;
+    background: #111;
+    color: #fff;
+    border: 1px solid #222;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .12);
+}
 
-        .trust-item i {
-            width: 42px;
-            height: 42px;
-            flex: 0 0 42px;
-            display: grid;
-            place-items: center;
-            border-radius: 12px;
-            background: #111;
-            color: #fff;
-            font-size: 16px;
-        }
+.trust-item i {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: #fff;
+    color: #111;
+    font-size: 16px;
+}
 
-        .trust-item strong {
-            display: block;
-            margin-bottom: 3px;
-            font-size: 14px;
-        }
+.trust-item strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 14px;
+    color: #fff;
+}
 
-        .trust-item span {
-            display: block;
-            color: #777;
-            font-size: 12px;
-            line-height: 1.5;
-        }
+.trust-item span {
+    display: block;
+    color: #d0d0d0;
+    font-size: 12px;
+    line-height: 1.5;
+}
 
         .about-section,
         .contact-section {
@@ -487,6 +489,38 @@
         }
 
     </style>
+
+
+<style id="modern-arabic-font">
+/* خط عربي حديث واحترافي للموقع */
+body,
+button,
+a,
+input,
+textarea,
+select,
+nav,
+.product-card,
+.product-info,
+.trust-item,
+.about-section,
+.cart-section,
+.contact-section,
+footer {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* اسم العلامة التجارية فقط بخط الرقعة */
+.logo a,
+.logo a img {
+    font-family: 'Aref Ruqaa', serif;
+}
+
+.hero-content h1,
+footer h3 {
+    font-family: 'Aref Ruqaa', serif;
+}
+</style>
 
 </head>
 

@@ -53,15 +53,11 @@ html {
 
 body {
     direction: rtl;
-
     min-width: 320px;
     min-height: 100vh;
-
     overflow-x: hidden;
-
     background: var(--black);
     color: var(--white);
-
     font-family: "Aref Ruqaa", serif;
 }
 
@@ -138,7 +134,6 @@ input:focus-visible {
 
 header {
     position: fixed;
-
     top: 18px;
     right: 50%;
 
@@ -156,7 +151,6 @@ header {
     background: rgba(68, 68, 68, 0.452);
 
     border: 1px solid rgba(255, 255, 255, 0.13);
-
     border-radius: 50px;
 
     backdrop-filter: blur(20px);
@@ -187,7 +181,6 @@ header:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
 }
 
@@ -200,7 +193,6 @@ header:hover {
 .logo img {
     width: 82px;
     max-height: 58px;
-
     object-fit: contain;
 
     transition:
@@ -224,13 +216,11 @@ nav {
     justify-content: center;
 
     gap: 4px;
-
     padding: 5px 7px;
 
     background: rgba(255, 255, 255, 0.055);
 
     border: 1px solid rgba(255, 255, 255, 0.1);
-
     border-radius: 40px;
 }
 
@@ -259,7 +249,6 @@ nav a {
 nav a:hover {
     background: var(--white);
     color: var(--black);
-
     transform: translateY(-1px);
 }
 
@@ -278,7 +267,9 @@ nav a:hover {
 }
 
 
-/* Search icon from HTML */
+/* =========================================================
+   SEARCH ICON
+========================================================= */
 
 #searchIcon {
     position: relative;
@@ -291,11 +282,9 @@ nav a:hover {
     justify-content: center;
 
     background: rgba(255, 255, 255, 0.06);
-
     color: var(--white);
 
     border: 1px solid var(--border-medium);
-
     border-radius: 50%;
 
     cursor: pointer;
@@ -310,14 +299,14 @@ nav a:hover {
 #searchIcon:hover {
     background: var(--white);
     color: var(--black);
-
     border-color: var(--white);
-
     transform: translateY(-2px);
 }
 
 
-/* Cart */
+/* =========================================================
+   CART
+========================================================= */
 
 .cart {
     position: relative;
@@ -330,11 +319,9 @@ nav a:hover {
     justify-content: center;
 
     background: rgba(255, 255, 255, 0.06);
-
     color: var(--white);
 
     border: 1px solid var(--border-medium);
-
     border-radius: 50%;
 
     cursor: pointer;
@@ -349,9 +336,7 @@ nav a:hover {
 .cart:hover {
     background: var(--white);
     color: var(--black);
-
     border-color: var(--white);
-
     transform: translateY(-2px);
 }
 
@@ -386,10 +371,8 @@ nav a:hover {
     border-radius: 50%;
 
     font-family: Arial, sans-serif;
-
     font-size: 11px;
     font-weight: 700;
-
     line-height: 1;
 
     box-shadow:
@@ -406,7 +389,6 @@ nav a:hover {
 
     width: 100%;
     height: 100vh;
-
     min-height: 650px;
 
     overflow: hidden;
@@ -427,7 +409,6 @@ nav a:hover {
 
 .hero-video {
     position: absolute;
-
     inset: 0;
 
     width: 100%;
@@ -445,7 +426,6 @@ nav a:hover {
 
 .overlay {
     position: absolute;
-
     inset: 0;
 
     z-index: 1;
@@ -473,8 +453,7 @@ nav a:hover {
 
     padding: 20px;
 
-    animation:
-        heroFade 1.2s ease both;
+    animation: heroFade 1.2s ease both;
 }
 
 .hero-content h1 {
@@ -483,7 +462,6 @@ nav a:hover {
     color: var(--white);
 
     font-size: clamp(65px, 9vw, 130px);
-
     line-height: 1;
 
     font-weight: 700;
@@ -575,7 +553,6 @@ nav a:hover {
     color: var(--white);
 
     font-size: clamp(35px, 5vw, 55px);
-
     line-height: 1.2;
 }
 
@@ -624,13 +601,11 @@ nav a:hover {
     min-width: 0;
 
     overflow: hidden;
-
     isolation: isolate;
 
     background: var(--black-4);
 
     border: 1px solid var(--border-light);
-
     border-radius: 16px;
 
     box-shadow:
@@ -652,13 +627,14 @@ nav a:hover {
 }
 
 
-/* Card border glow */
+/* =========================================================
+   CARD BORDER GLOW
+========================================================= */
 
 .product-card::after {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     z-index: 4;
@@ -690,15 +666,52 @@ nav a:hover {
 
     object-fit: cover;
 
+    cursor: pointer;
+
     transition:
+        opacity 0.25s ease,
         transform 0.6s ease,
         filter 0.6s ease;
 }
 
 .product-card:hover > img {
     transform: scale(1.055);
-
     filter: brightness(0.87);
+}
+
+
+/* =========================================================
+   IMAGE HINT
+========================================================= */
+
+.product-card .image-hint {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 10;
+
+    padding: 7px 11px;
+
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .image-hint {
+    opacity: 1;
 }
 
 
@@ -729,7 +742,6 @@ nav a:hover {
     color: var(--white);
 
     font-size: 26px;
-
     line-height: 1.3;
 }
 
@@ -739,7 +751,6 @@ nav a:hover {
     color: #dddddd;
 
     font-family: Arial, sans-serif;
-
     font-size: 19px;
     font-weight: 700;
 }
@@ -747,8 +758,6 @@ nav a:hover {
 
 /* =========================================================
    PRODUCT ACTIONS
-   NEW HTML
-   زر أضف للسلة + زر عرض المنتج
 ========================================================= */
 
 .product-actions {
@@ -772,7 +781,6 @@ nav a:hover {
     position: relative;
 
     flex: 1;
-
     min-width: 0;
     min-height: 52px;
 
@@ -973,7 +981,8 @@ nav a:hover {
 }
 
 .cart-item:hover {
-    border-color: rgba(255, 255, 255, 0.16);
+    border-color:
+        rgba(255, 255, 255, 0.16);
 }
 
 
@@ -1056,13 +1065,11 @@ nav a:hover {
     height: 32px;
 
     background: var(--white);
-
     color: var(--black);
 
     border-radius: 7px;
 
     font-family: Arial, sans-serif;
-
     font-size: 18px;
     font-weight: 700;
 }
@@ -1102,7 +1109,6 @@ nav a:hover {
     margin-right: 8px;
 
     background: #1c1c1c;
-
     color: var(--white);
 
     border-radius: 7px;
@@ -1110,7 +1116,6 @@ nav a:hover {
 
 .remove-btn:hover {
     background: var(--white);
-
     color: var(--black);
 }
 
@@ -1183,7 +1188,6 @@ nav a:hover {
     padding: 15px 35px;
 
     background: var(--green);
-
     color: #06170b;
 
     border:
@@ -1232,7 +1236,6 @@ nav a:hover {
 
 .search-box {
     position: fixed;
-
     inset: 0;
 
     z-index: 2000;
@@ -1247,7 +1250,6 @@ nav a:hover {
         rgba(0, 0, 0, 0.96);
 
     backdrop-filter: blur(12px);
-
     -webkit-backdrop-filter: blur(12px);
 }
 
@@ -1271,7 +1273,6 @@ nav a:hover {
     outline: none;
 
     background: var(--black-4);
-
     color: var(--white);
 
     border:
@@ -1306,7 +1307,6 @@ nav a:hover {
     flex-shrink: 0;
 
     background: var(--white);
-
     color: var(--black);
 
     border-radius: 9px;
@@ -1323,7 +1323,6 @@ nav a:hover {
 
 #closeSearch:hover {
     background: #222;
-
     color: var(--white);
 
     transform: rotate(3deg);
@@ -1426,7 +1425,6 @@ nav a:hover {
     justify-content: center;
 
     background: var(--black-4);
-
     color: var(--white);
 
     border:
@@ -1435,7 +1433,6 @@ nav a:hover {
     border-radius: 50%;
 
     font-family: Arial, sans-serif;
-
     font-size: 17px;
 
     transition:
@@ -1447,7 +1444,6 @@ nav a:hover {
 
 .social-links a:hover {
     background: var(--white);
-
     color: var(--black);
 
     border-color: var(--white);
@@ -1493,7 +1489,6 @@ footer p {
 ========================================================= */
 
 @keyframes heroFade {
-
     from {
         opacity: 0;
 
@@ -1511,6 +1506,378 @@ footer p {
 
 
 /* =========================================================
+   PRODUCT IMAGE HOVER SLIDER
+========================================================= */
+
+.product-card > img {
+    cursor: pointer;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+/* =========================================================
+   PRODUCT OPTIONS MODAL
+========================================================= */
+
+.product-options-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.product-options-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   PRODUCT OPTIONS BOX
+========================================================= */
+
+.product-options-box {
+    position: relative;
+
+    width: min(430px, 100%);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181818,
+            #090909
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.7);
+
+    transform:
+        translateY(20px)
+        scale(0.96);
+
+    transition:
+        transform 0.25s ease;
+}
+
+.product-options-modal.show .product-options-box {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   CLOSE MODAL
+========================================================= */
+
+.product-options-close {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    z-index: 10;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 50%;
+
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.product-options-close:hover {
+    background: #fff;
+    color: #000;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   MODAL IMAGE
+========================================================= */
+
+.product-options-image {
+    width: 100%;
+    height: 190px;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+.product-options-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   MODAL CONTENT
+========================================================= */
+
+.product-options-content {
+    padding: 22px;
+
+    text-align: right;
+}
+
+.product-options-content h3 {
+    margin-bottom: 5px;
+
+    color: #fff;
+
+    font-size: 27px;
+}
+
+.product-options-price {
+    margin-bottom: 22px;
+
+    color: #ccc;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   OPTION GROUP
+========================================================= */
+
+.option-group {
+    margin-bottom: 20px;
+}
+
+.option-title {
+    margin-bottom: 10px;
+
+    color: #fff;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+.modal-color-options {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.modal-color-option {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 12px;
+
+    background: #151515;
+    color: #fff;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.modal-color-option span {
+    width: 19px;
+    height: 19px;
+
+    display: block;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.35);
+}
+
+.modal-color-option.active {
+    background: #fff;
+    color: #000;
+
+    border-color: #fff;
+}
+
+.modal-color-option:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SIZES
+========================================================= */
+
+.modal-size-options {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.modal-size-option {
+    min-width: 52px;
+    height: 42px;
+
+    padding: 0 13px;
+
+    background: #151515;
+    color: #fff;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 9px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.modal-size-option:hover {
+    transform: translateY(-2px);
+
+    border-color: #fff;
+}
+
+.modal-size-option.active {
+    background: #fff;
+    color: #000;
+
+    border-color: #fff;
+}
+
+
+/* =========================================================
+   MODAL ADD BUTTON
+========================================================= */
+
+.modal-add-to-cart {
+    width: 100%;
+    min-height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 8px;
+
+    background: #fff;
+    color: #000;
+
+    border-radius: 11px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.modal-add-to-cart:hover {
+    background: #ddd;
+
+    transform: translateY(-2px);
+}
+
+.modal-add-to-cart:active {
+    transform: scale(0.98);
+}
+
+.modal-add-to-cart:disabled {
+    cursor: default;
+    opacity: 0.7;
+}
+
+
+/* =========================================================
    TABLET
 ========================================================= */
 
@@ -1518,7 +1885,6 @@ footer p {
 
     header {
         width: 94%;
-
         padding: 0 20px;
     }
 
@@ -1528,7 +1894,6 @@ footer p {
 
     nav a {
         padding: 8px 12px;
-
         font-size: 16px;
     }
 
@@ -1574,7 +1939,6 @@ footer p {
 
     .logo img {
         width: 62px;
-
         max-height: 48px;
     }
 
@@ -1640,7 +2004,6 @@ footer p {
 
     .hero {
         min-height: 600px;
-
         height: 100svh;
     }
 
@@ -1686,7 +2049,7 @@ footer p {
     }
 
 
-    /* Product buttons */
+    /* Product Buttons */
 
     .product-actions {
         gap: 8px;
@@ -1696,8 +2059,7 @@ footer p {
     .product-actions a {
         min-height: 50px;
 
-        padding:
-            9px 8px;
+        padding: 9px 8px;
 
         font-size: 15px;
 
@@ -1731,7 +2093,6 @@ footer p {
 
     .checkout-btn {
         width: 100%;
-
         max-width: 360px;
 
         min-width: 0;
@@ -1757,6 +2118,46 @@ footer p {
     footer h3 {
         font-size: 35px;
     }
+
+
+    /* Product Modal */
+
+    .product-options-modal {
+        align-items: flex-end;
+
+        padding: 10px;
+    }
+
+    .product-options-box {
+        width: 100%;
+
+        max-height: 88vh;
+
+        border-radius:
+            20px 20px 15px 15px;
+    }
+
+    .product-options-image {
+        height: 150px;
+    }
+
+    .product-options-content {
+        padding: 18px;
+    }
+
+    .product-options-content h3 {
+        font-size: 23px;
+    }
+
+    .option-title {
+        font-size: 16px;
+    }
+
+    .modal-add-to-cart {
+        min-height: 50px;
+
+        font-size: 16px;
+    }
 }
 
 
@@ -1768,7 +2169,6 @@ footer p {
 
     header {
         width: 96%;
-
         height: 60px;
 
         padding: 0 8px;
@@ -1808,7 +2208,6 @@ footer p {
 
     .hero {
         min-height: 560px;
-
         height: 100svh;
     }
 
@@ -1857,7 +2256,7 @@ footer p {
     }
 
 
-    /* Product buttons */
+    /* Product Buttons */
 
     .product-actions {
         gap: 6px;
@@ -1867,8 +2266,7 @@ footer p {
     .product-actions a {
         min-height: 48px;
 
-        padding:
-            8px 5px;
+        padding: 8px 5px;
 
         font-size: 13px;
 
@@ -1943,567 +2341,10 @@ footer p {
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
-
         animation-iteration-count: 1 !important;
 
         transition-duration: 0.01ms !important;
 
         scroll-behavior: auto !important;
     }
-}
-/* =========================================================
-   PRODUCT IMAGE HOVER SLIDER
-========================================================= */
-
-.product-card > img {
-    cursor: pointer;
-
-    transition:
-        opacity 0.25s ease,
-        transform 0.5s ease,
-        filter 0.5s ease;
-}
-
-/* مؤشر صغير يوضح إن الصورة قابلة للتبديل */
-
-.product-card .image-hint {
-    position: absolute;
-
-    top: 15px;
-    left: 15px;
-
-    z-index: 10;
-
-    padding: 7px 11px;
-
-    background: rgba(0, 0, 0, 0.65);
-
-    color: #fff;
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-
-    border-radius: 20px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 11px;
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition: opacity 0.3s ease;
-}
-
-.product-card:hover .image-hint {
-    opacity: 1;
-}
-/* =========================================================
-   PRODUCT OPTIONS MODAL
-========================================================= */
-
-.product-options-modal {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 5000;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-
-    background: rgba(0, 0, 0, 0.72);
-
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition:
-        opacity 0.2s ease,
-        visibility 0.2s ease;
-
-}
-
-
-.product-options-modal.show {
-
-    opacity: 1;
-
-    visibility: visible;
-
-}
-
-
-/* =========================================================
-   BOX
-========================================================= */
-
-.product-options-box {
-
-    position: relative;
-
-    width: min(430px, 100%);
-
-    max-height: 90vh;
-
-    overflow-y: auto;
-
-    background:
-        linear-gradient(
-            145deg,
-            #181818,
-            #090909
-        );
-
-    border:
-        1px solid rgba(255, 255, 255, 0.14);
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.7);
-
-    transform:
-        translateY(20px)
-        scale(0.96);
-
-    transition:
-        transform 0.25s ease;
-
-}
-
-
-.product-options-modal.show
-.product-options-box {
-
-    transform:
-        translateY(0)
-        scale(1);
-
-}
-
-
-/* =========================================================
-   CLOSE
-========================================================= */
-
-.product-options-close {
-
-    position: absolute;
-
-    top: 12px;
-    left: 12px;
-
-    z-index: 10;
-
-    width: 36px;
-    height: 36px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(0, 0, 0, 0.65);
-
-    color: #fff;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.15);
-
-    border-radius: 50%;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 25px;
-
-    line-height: 1;
-
-    cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-
-}
-
-
-.product-options-close:hover {
-
-    background: #fff;
-
-    color: #000;
-
-    transform: rotate(90deg);
-
-}
-
-
-/* =========================================================
-   IMAGE
-========================================================= */
-
-.product-options-image {
-
-    width: 100%;
-
-    height: 190px;
-
-    overflow: hidden;
-
-    background: #111;
-
-}
-
-
-.product-options-image img {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-}
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
-
-.product-options-content {
-
-    padding: 22px;
-
-    text-align: right;
-
-}
-
-
-.product-options-content h3 {
-
-    margin-bottom: 5px;
-
-    color: #fff;
-
-    font-size: 27px;
-
-}
-
-
-.product-options-price {
-
-    margin-bottom: 22px;
-
-    color: #ccc;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 17px;
-
-    font-weight: 700;
-
-}
-
-
-/* =========================================================
-   OPTION GROUP
-========================================================= */
-
-.option-group {
-
-    margin-bottom: 20px;
-
-}
-
-
-.option-title {
-
-    margin-bottom: 10px;
-
-    color: #fff;
-
-    font-size: 18px;
-
-    font-weight: 700;
-
-}
-
-
-/* =========================================================
-   COLORS
-========================================================= */
-
-.modal-color-options {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-}
-
-
-.modal-color-option {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    padding: 7px 12px;
-
-    background: #151515;
-
-    color: #fff;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.13);
-
-    border-radius: 9px;
-
-    cursor: pointer;
-
-    font-size: 14px;
-
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-
-}
-
-
-.modal-color-option span {
-
-    width: 19px;
-    height: 19px;
-
-    display: block;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.35);
-
-}
-
-
-.modal-color-option.active {
-
-    background: #fff;
-
-    color: #000;
-
-    border-color: #fff;
-
-}
-
-
-.modal-color-option:hover {
-
-    transform: translateY(-2px);
-
-}
-
-
-/* =========================================================
-   SIZES
-========================================================= */
-
-.modal-size-options {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-}
-
-
-.modal-size-option {
-
-    min-width: 52px;
-
-    height: 42px;
-
-    padding: 0 13px;
-
-    background: #151515;
-
-    color: #fff;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.15);
-
-    border-radius: 9px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-
-}
-
-
-.modal-size-option:hover {
-
-    transform: translateY(-2px);
-
-    border-color: #fff;
-
-}
-
-
-.modal-size-option.active {
-
-    background: #fff;
-
-    color: #000;
-
-    border-color: #fff;
-
-}
-
-
-/* =========================================================
-   ADD BUTTON
-========================================================= */
-
-.modal-add-to-cart {
-
-    width: 100%;
-
-    min-height: 52px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 9px;
-
-    margin-top: 8px;
-
-    background: #fff;
-
-    color: #000;
-
-    border-radius: 11px;
-
-    font-size: 17px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.35);
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease;
-
-}
-
-
-.modal-add-to-cart:hover {
-
-    background: #ddd;
-
-    transform: translateY(-2px);
-
-}
-
-
-.modal-add-to-cart:disabled {
-
-    cursor: default;
-
-    opacity: 0.7;
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 500px) {
-
-    .product-options-modal {
-
-        align-items: flex-end;
-
-        padding: 10px;
-
-    }
-
-
-    .product-options-box {
-
-        width: 100%;
-
-        max-height: 88vh;
-
-        border-radius: 20px 20px 15px 15px;
-
-    }
-
-
-    .product-options-image {
-
-        height: 150px;
-
-    }
-
-
-    .product-options-content {
-
-        padding: 18px;
-
-    }
-
-
-    .product-options-content h3 {
-
-        font-size: 23px;
-
-    }
-
-
-    .option-title {
-
-        font-size: 16px;
-
-    }
-
-
-    .modal-add-to-cart {
-
-        min-height: 50px;
-
-        font-size: 16px;
-
-    }
-
 }
